@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <!-- <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'"> -->
+      <script src="components/loader.js"></script>
+      <link rel="stylesheet" href="components/loader.css">
+        <title>test-rpg</title>
+        <script type="text/javascript" src="enchant.js"></script>
+        <script type="text/javascript" src="ui.enchant.js"></script>
+        <!-- This software includes the work that is distributed in the http://www.apache.org/licenses/LICENSE-2.0 -->
+        <script type="text/javascript"src="MathJax-2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            TeX: { equationNumbers: { autoNumber: "AMS" }},
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              processEscapes: true
+            },
+            "HTML-CSS": { matchFontHeight: false },
+            displayAlign: "center",
+            displayIndent: "0em"
+          });
+        </script>
+        <script type="text/javascript" src="getQuiz.js"></script>
+        <script type="text/javascript" src="game.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+      <div id="screen" class="screen">
+        <div id="hp" class="battle_window is-invisible">
+        </div>
+        <div id="battle_scene" class="battle_window is-invisible">
+          <div id="statement">
+            <!-- ここに問題を表示 -->
+          </div>
+          <form action="index.html" method="get" name="answer_form">
+              答え：<input type="text" name="answer">
+              <button id="submit" type="button">送信</button>
+          </form>
+          <!-- 加藤:e(自然対数の底)、Piなどの入力ボタンを生成 -->
+          <div id="input_btn">
+            <!-- ここに生成 -->
+          </div>
+          <div id="result">
+          <!-- ここに結果を表示 -->
+          </div>
+        </div>
+        <div id="battle_scene2" class="battle_window is-invisible">
+          <div id="statement2">
+            <!-- ここに問題を表示 -->
+          </div>
+          <div id="select_btn">
+            <!-- 中田：class="btn__text"を追加 -->
+            <div id="btn1" class="btn__text">　1 :<button id="submit1" type="button"></button></div>
+            <div id="btn2" class="btn__text">　2 :<button id="submit2" type="button"></button></div>
+            <div id="btn3" class="btn__text">　3 :<button id="submit3" type="button"></button></div>
+            <div id="btn4" class="btn__text">　4 :<button id="submit4" type="button"></button></div>
+          </div>
+      </div>
+      <div id="explanation_scene" class="battle_window is-invisible">
+        <div id="result2">
+        <!-- ここに結果を表示 -->
+        </div>
+        <div id="explanation">
+        <!-- ここに解説を表示 -->
+        </div>
+        <div id="btn_close"><button id="submit_close" type="button" class="is-invisible">閉じる</button></div>
+      </div>
+    </div>
+    <div id="memo" class="memo is-invisible">
+      <h1>メモ</h1>
+      <br>
+      <textarea id="memo_area" rows="10" style="resize: none;"></textarea>
+      <br>
+      <button id="submit_LorR" type="button">右側に移動</button>
+      <button id="submit_reset" type="button">クリア</button>
+      </form>
+    </div>
+    <div id="mask" class="mask is-invisible">
+    </div>
+  </body>
+</html>

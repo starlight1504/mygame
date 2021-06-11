@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title>RPG & クイズゲーム</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+    <body>
+      <div id="header">
+        <div id="title">
+          <span class="l-bigchar l-white">RPG & クイズゲーム</span>
+          <span class="l-smallchar l-white">RPGと数学のクイズを融合したゲームです</span>
+        </div>
+        <div id="icon">
+          <img src="./myface.jpg" alt="" id="myface">
+          <div class="tooltip">
+            <div id="about" class="l-white">
+              中田聖之</br>
+              愛知県立大学</br>
+              情報科学部</br>
+              情報科学科</br>
+              2001年3月16日生
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="main">
+        <div class="l-frame">
+            <iframe name="itf" src="./game/index.html" style="border-radius: 10px" scrolling="no" frameborder="no" class="rpg" onload="this.contentWindow.focus();"></iframe>
+        </div>
+        <form>
+          <input type="button" class="l-btn l-white" value="キーボード操作できない時に有効にするボタン(ゲーム画面をクリックしてから押してください)" onclick="itf.focus();">
+        </form>
+      </div>
+      <script type="text/javascript" src="main.js"></script>
+      <script type="text/javascript">
+        $(function () {
+          $('.tooltip').hide();
+          $('#icon').hover(
+          function () {
+              $(this).stop(true).children('.tooltip').fadeIn('fast');
+          },
+          function () {
+              $(this).stop(true).children('.tooltip').fadeOut('fast');
+          });
+        });
+      </script>
+    </body>
+
+</html>

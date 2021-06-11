@@ -1,0 +1,113 @@
+/* 中田：以下のコードは中田によるコーディング */
+  /*
+    SMACSSに基づいたCSS設計による実装を行う
+    参考文献
+    https://app.codegrid.net/entry/smacss-1
+    http://smacss.com/ja
+
+  */
+
+  /* --- BASE --- */
+    /* A Modern CSS Reset */
+  *,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,p,ul[class],ol[class],figure,blockquote,dl,dd{margin:0}html{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}img:not([alt]){filter:blur(10px)}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+
+  /* --- LAYOUT --- */
+
+
+  /* --- MODULE --- */
+  .btn__text{
+    text-align: left;
+    display: block;
+  }
+
+  .screen{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .battle_window{
+    background-color: white;
+    text-align: center;
+    border: solid;
+    width: 40%;
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+  }
+  .battle_window.l-battle-margin{
+      margin: 0.5em;
+      padding: 0.5em;
+    }
+
+  @media screen and (max-width: 680px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+    .battle_window{
+      background-color: white;
+      text-align: center;
+      border: solid;
+      width: 80%;
+      z-index: 100;
+    }
+  }
+
+  .text_box {
+    width: 70%;
+    margin: 5px;
+  }
+
+  .memo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 15%;
+    height: 100vh;
+    z-index: 100;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+  }
+
+  /* --- STATE --- */
+  .is-invisible{
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    border: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+
+  .is-invisible.is-show{
+    opacity: 1;
+    height: auto;
+    padding: auto;
+    border: solid;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+
+  @keyframes fadeIn {
+
+  0% {opacity: 0}
+
+  100% {opacity: 1}
+
+}
