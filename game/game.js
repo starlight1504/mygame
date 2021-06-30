@@ -68,12 +68,7 @@ window.onload = function() {
           this.steps = Math.abs(this.vx) + Math.abs(this.vy);//移動距離の変数
           var countPoint = Math.random()*400;//エンカウントする歩数の乱数
           if (this.steps > countPoint) {
-            quiz_key =　Math.round(Math.random() * 1);
-            if( quiz_key == 0){
-              game.pushScene(createBattleScene());//戦闘へ移行
-            }else{
-              game.pushScene(createBattleScene2());//戦闘へ移行
-            }
+            game.pushScene(createBattleScene2());//戦闘へ移行
             console.log('エンカウントしました');
 
           }
